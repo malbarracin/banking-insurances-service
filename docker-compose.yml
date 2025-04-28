@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  banking-insurances-service:
+    image: malbarracin/banking-insurances-service:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT:-8084}:${PORT:-8084}"
+    env_file:
+      - .env
+    networks:
+      - banking-network
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      - MONGODB_HOST=mongodb
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "${MONGODB_PORT:-27017}:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD:-example}
+      MONGO_INITDB_DATABASE: ${MONGODB_DATABASE:-banking}
+    networks:
+      - banking-network
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+networks:
+  banking-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:

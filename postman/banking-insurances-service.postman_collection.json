@@ -1,0 +1,703 @@
+{
+  "info": {
+    "_postman_id": "b5e8d5a0-5f1d-4c3e-8b5a-9f8d5a0b5e8d",
+    "name": "Banking Insurances Service",
+    "description": "API collection for Banking Insurances Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Check Health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/health",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "health"
+              ]
+            },
+            "description": "Check if the service is healthy"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Insurance Products",
+      "item": [
+        {
+          "name": "Get All Insurance Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/insurance-products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "insurance-products"
+              ]
+            },
+            "description": "Get all insurance products"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Insurance Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/insurance-products/{{productId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "insurance-products",
+                "{{productId}}"
+              ]
+            },
+            "description": "Get an insurance product by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Insurance Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Premium Life Insurance\",\n    \"description\": \"Comprehensive life insurance with additional benefits\",\n    \"type\": \"LIFE\",\n    \"coverageLevel\": \"PREMIUM\",\n    \"basePremium\": 250.00,\n    \"coverageDetails\": {\n        \"deathBenefit\": 500000,\n        \"criticalIllnessCoverage\": true,\n        \"accidentalDeathBenefit\": 1000000,\n        \"disabilityCoverage\": true\n    },\n    \"isActive\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/insurance-products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "insurance-products"
+              ]
+            },
+            "description": "Create a new insurance product"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Insurance Product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Updated Premium Life Insurance\",\n    \"description\": \"Updated comprehensive life insurance with additional benefits\",\n    \"basePremium\": 275.00,\n    \"coverageDetails\": {\n        \"deathBenefit\": 600000,\n        \"criticalIllnessCoverage\": true,\n        \"accidentalDeathBenefit\": 1200000,\n        \"disabilityCoverage\": true\n    }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/insurance-products/{{productId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "insurance-products",
+                "{{productId}}"
+              ]
+            },
+            "description": "Update an existing insurance product"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Insurance Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/insurance-products/{{productId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "insurance-products",
+                "{{productId}}"
+              ]
+            },
+            "description": "Delete an insurance product"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Policies",
+      "item": [
+        {
+          "name": "Get All Policies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/policies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "policies"
+              ]
+            },
+            "description": "Get all policies"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Policy by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/policies/{{policyId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "policies",
+                "{{policyId}}"
+              ]
+            },
+            "description": "Get a policy by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Policies by User ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/policies/user/{{userId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "policies",
+                "user",
+                "{{userId}}"
+              ]
+            },
+            "description": "Get all policies for a specific user"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Policies by User DNI",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/policies/user/dni/{{userDni}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "policies",
+                "user",
+                "dni",
+                "{{userDni}}"
+              ]
+            },
+            "description": "Get all policies for a user by their DNI (Document Number)"
+          },
+          "response": []
+        },
+        {
+          "name": "Download Policy PDF",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/policies/{{policyId}}/pdf",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "policies",
+                "{{policyId}}",
+                "pdf"
+              ]
+            },
+            "description": "Download a policy as PDF document"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Policy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"insuranceProductId\": \"{{productId}}\",\n    \"userId\": \"{{userId}}\",\n    \"startDate\": \"2023-10-01T00:00:00.000Z\",\n    \"endDate\": \"2024-10-01T00:00:00.000Z\",\n    \"premium\": 250.00,\n    \"coverageDetails\": {\n        \"deathBenefit\": 500000,\n        \"criticalIllnessCoverage\": true,\n        \"accidentalDeathBenefit\": 1000000,\n        \"disabilityCoverage\": true\n    },\n    \"beneficiaries\": [\"John Doe\", \"Jane Doe\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/policies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "policies"
+              ]
+            },
+            "description": "Create a new policy"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Policy",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"premium\": 275.00,\n    \"coverageDetails\": {\n        \"deathBenefit\": 600000,\n        \"criticalIllnessCoverage\": true,\n        \"accidentalDeathBenefit\": 1200000,\n        \"disabilityCoverage\": true\n    },\n    \"beneficiaries\": [\"John Doe\", \"Jane Doe\", \"James Doe\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/policies/{{policyId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "policies",
+                "{{policyId}}"
+              ]
+            },
+            "description": "Update an existing policy"
+          },
+          "response": []
+        },
+        {
+          "name": "Cancel Policy",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reason\": \"Customer requested cancellation\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/policies/{{policyId}}/cancel",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "policies",
+                "{{policyId}}",
+                "cancel"
+              ]
+            },
+            "description": "Cancel an existing policy"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Claims",
+      "item": [
+        {
+          "name": "Get All Claims",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/claims",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "claims"
+              ]
+            },
+            "description": "Get all claims"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Claim by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/claims/{{claimId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "claims",
+                "{{claimId}}"
+              ]
+            },
+            "description": "Get a claim by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Claims by Policy ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/claims/policy/{{policyId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "claims",
+                "policy",
+                "{{policyId}}"
+              ]
+            },
+            "description": "Get all claims for a specific policy"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Claim",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"policyId\": \"{{policyId}}\",\n    \"incidentDate\": \"2023-09-15T10:30:00.000Z\",\n    \"description\": \"Hospital admission due to accident\",\n    \"claimAmount\": 5000.00,\n    \"supportingDocuments\": [\"hospital_report.pdf\", \"medical_bills.pdf\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/claims",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "claims"
+              ]
+            },
+            "description": "Create a new claim"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Claim Status - Under Review",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"UNDER_REVIEW\",\n    \"reviewNotes\": \"Claim is being reviewed by the claims department\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/claims/{{claimId}}/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "claims",
+                "{{claimId}}",
+                "status"
+              ]
+            },
+            "description": "Update claim status to UNDER_REVIEW"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Claim Status - Approved",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"APPROVED\",\n    \"approvedAmount\": 4500.00,\n    \"reviewNotes\": \"Claim approved after verification of medical documents\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/claims/{{claimId}}/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "claims",
+                "{{claimId}}",
+                "status"
+              ]
+            },
+            "description": "Update claim status to APPROVED"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Claim Status - Rejected",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"REJECTED\",\n    \"rejectionReason\": \"Claim falls outside policy coverage\",\n    \"reviewNotes\": \"The incident occurred before the policy start date\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/claims/{{claimId}}/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "claims",
+                "{{claimId}}",
+                "status"
+              ]
+            },
+            "description": "Update claim status to REJECTED"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Claim Status - Paid",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"PAID\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/banking-insurances-service/api/v1/claims/{{claimId}}/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "banking-insurances-service",
+                "api",
+                "v1",
+                "claims",
+                "{{claimId}}",
+                "status"
+              ]
+            },
+            "description": "Update claim status to PAID"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "productId",
+      "value": "",
+      "type": "string",
+      "description": "ID of an insurance product"
+    },
+    {
+      "key": "userId",
+      "value": "",
+      "type": "string",
+      "description": "ID of a user"
+    },
+    {
+      "key": "userDni",
+      "value": "",
+      "type": "string",
+      "description": "DNI (Document Number) of a user"
+    },
+    {
+      "key": "policyId",
+      "value": "",
+      "type": "string",
+      "description": "ID of a policy"
+    },
+    {
+      "key": "claimId",
+      "value": "",
+      "type": "string",
+      "description": "ID of a claim"
+    }
+  ]
+}
